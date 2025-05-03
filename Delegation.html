@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Event Delegation -->
+  <section id="sec">
+    <ul id="list-container">
+      <li class="list">lorem-1</li>
+      <li class="list">lorem-2</li>
+      <li class="list">lorem-3</li>
+      <li class="list">lorem-4</li>
+      <li class="list">lorem-5</li>
+      <li class="list">lorem-6</li>
+      <li class="list">lorem-7</li>
+    </ul>
+  </section> 
+    <button id="btn">Add New Comment</button>
+ <script>
+//  const items=document.getElementsByClassName('list');
+// for (item of items){
+// // console.log(item);
+// item.addEventListener('click',(event)=>{
+//   event.target.parentNode.removeChild(event.target)
+// })
+// }
+
+document.getElementById('list-container').addEventListener('click',(event)=>{
+   event.target.parentNode.removeChild(event.target);
+})
+document.getElementById('btn').addEventListener('click',()=>{
+  const newlist=document.createElement('li');
+  newlist.classList.add('list');
+  newlist.textContent='notun list add korlam'
+  //  console.log(newlist.innerText);
+  document.getElementById('list-container').appendChild(newlist);
+})
+ </script>
+ 
+</body>
+</html>
